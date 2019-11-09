@@ -1,0 +1,83 @@
+<article class="articleContainer">
+	<div class="articleIntro">
+		<h2>Arrays in Rhino.Python</h2>
+		<date>2019.08</date>
+		<p>Like many programming languages, a typical rhino.python script starts with importing a library. This allows
+			us to access and use pre-written functions in our python script.</p>
+		<div class="a">
+			<pcode>import rhinoscriptsyntax as rs</pcode>
+		</div>
+		<p>Functions defined in the library can be found at the <a
+				href="https://developer.rhino3d.com/api/RhinoScriptSyntax/">RhinoScriptSyntax Developer</a> page.
+		</p>
+
+		<p>I created a function called "Points". This will encompass the block of code that will define, in this
+			specific case, a 3-Dimensional array of points. To create a 3-D array, we need to first start of with how to
+			create a linear array of Points, then from the
+			linear array we can generate a 2-D array and finally a 3-D array from the 2-D array. </p>
+
+		<p>
+			Line 2 of the code consist of , Rs.Addpoint(), a rhinoscriptsyntax function that has three parameters for
+			the x, y and z axis. In this specific case the parameters are coordinates x as a variable , y as 0 and z as
+			0.
+		</p>
+		<p>
+			The first line of the code
+			Initiates the Rs.Addpoint() function 11 times and each time increments the x variable in the x coordinate.
+			This creates a linear line of points on the x axis from 0 to 10.
+		</p>
+		<div class="a">
+			<pcode>
+				//Linear Array<br>
+				For x in range (0,10):<br>
+				Rs.Addpoint (x,0,0)<br>
+
+			</pcode>
+		</div>
+	</div>
+	<div class="articleImage">
+		<img class="imageSize" src="blogArticles/BlogImg/1.jpg">
+	</div>
+
+	<p>
+		A 2-D array consists of a loop is nested in another loop. In this case a , the linear array is looped 10
+		times on the y axis to make a plane of points in the x and y direction
+	</p>
+	</div>
+	<div class="articleIntro">
+		<div class="a">
+			<pcode>
+				//2-D array<br>
+				For y in range (0,10):<br>
+				For x in range (0,10):<br>
+				Rs.addpoint (x,y,0)<br>
+
+			</pcode>
+		</div>
+	</div>
+	<div class="articleImage">
+		<img class="imageSize" src="blogArticles/BlogImg/2.jpg">
+	</div>
+
+
+	<p>
+		A 3-D array consists of a 2-D array nested in another loop. The 2-D array is looped i10 times in the y
+		direction. This creates a cube where points are position in the x, y and z coordinates.
+	</p>
+
+	<div class="articleIntro">
+		<div class="a">
+			<pcode>
+				//3-d array<br>
+				For z in range(0,10):<br>
+				For y in range (0,10):<br>
+				For x in range (0,10):<br>
+				Rd.addpoints(x,y,z)<br>
+			</pcode>
+		</div>
+		<div class="articleImage">
+			<img class="imageSize" src="blogArticles/BlogImg/3.jpg">
+		</div>
+
+
+</article>
